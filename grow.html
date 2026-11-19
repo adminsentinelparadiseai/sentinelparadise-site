@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grow | Sentinel Paradise</title>
+<meta name="description" content="Small business growth with Sentinel Paradise: filings, websites, payments, social media and AI tools, handled for you. Book a free consultation.">
+<meta property="og:title" content="Grow | Sentinel Paradise">
+<meta property="og:description" content="Small business growth: filings, websites, payments, social media and AI tools, handled for you.">
+<meta property="og:image" content="https://www.sentinelparadise.ai/images/calibration.jpg">
+<meta name="theme-color" content="#07111f">
+<link rel="icon" href="images/logo.png" type="image/png">
+<link rel="apple-touch-icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.grow-hero{padding:clamp(56px,8vw,96px) 0 clamp(40px,6vw,64px)}
+.grow-hero h1 span{background:linear-gradient(135deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.steps-bar{display:flex;gap:10px;margin:0 0 22px;font-size:.85rem;font-weight:600;color:var(--muted)}
+.steps-bar span{padding:7px 14px;border-radius:999px;border:1px solid var(--line)}
+.steps-bar span.on{background:var(--accent);color:#04121f;border-color:transparent}
+.intake{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.intake .full{grid-column:1/-1}
+.intake label{font-size:.85rem;font-weight:600;color:#c5d2e2;display:block}
+.intake input,.intake select,.intake textarea{width:100%;margin-top:6px;padding:13px 15px;border-radius:12px;border:1px solid var(--line);background:rgba(0,0,0,.25);color:var(--text);font:inherit;font-size:1rem}
+.intake select option{background:#0c1a2e}
+.intake input:focus,.intake select:focus,.intake textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.intake textarea{min-height:96px;resize:vertical}
+.needs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.needs label{display:flex;gap:10px;align-items:center;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:rgba(255,255,255,.03);font-weight:500;cursor:pointer}
+.needs input{width:auto;margin:0;accent-color:var(--accent)}
+.err{color:#fca5a5;font-size:.85rem;min-height:1.2em;margin-top:4px}
+.panel{background:var(--navy-3);border:1px solid var(--line);border-radius:var(--radius);padding:clamp(20px,3vw,32px)}
+.slot-pick{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px}
+.slot{text-align:left;padding:18px;border-radius:14px;border:1px solid var(--line);background:rgba(255,255,255,.03);color:var(--text);cursor:pointer;font:inherit}
+.slot b{display:block;font-family:var(--display);font-size:1.1rem;margin-bottom:4px}
+.slot small{color:var(--muted)}
+.slot.active{border-color:var(--accent);box-shadow:0 0 0 2px rgba(56,189,248,.35) inset;background:rgba(56,189,248,.08)}
+.recap{font-size:.9rem;color:var(--muted);margin:0 0 14px}
+[hidden]{display:none!important}
+@media (max-width:760px){.intake,.needs,.slot-pick{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <nav class="container nav" aria-label="Main">
+    <a class="brand" href="./" aria-label="Sentinel Paradise home">
+      <img src="images/logo.png" alt="" width="40" height="40">
+      <span>Sentinel Paradise<small>.ai</small></span>
+    </a>
+    <button class="menu-btn" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="grow" aria-current="page">Grow</a></li>
+      <li><a href="./">Home</a></li>
+      <li><a href="capabilities">Capabilities</a></li>
+      <li><a href="academy">Sentinel Academy</a></li>
+      <li><a class="btn btn-primary" href="./#book" style="padding:9px 18px">Book a Consultation</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main">
+<section class="grow-hero">
+  <div class="container">
+    <span class="eyebrow">For small businesses</span>
+    <h1>Grow your business. <span>We handle the back office.</span></h1>
+    <p class="lead">Sentinel Paradise keeps small businesses running like empires: filings and licenses, websites and booking, payment links, social media and AI tools, set up and maintained so you can focus on your customers.</p>
+    <ul class="help-list" style="grid-template-columns:repeat(auto-fit,minmax(220px,1fr))">
+      <li>LLC, EIN &amp; license filings</li>
+      <li>Websites &amp; online booking</li>
+      <li>Payment links &amp; invoicing</li>
+      <li>Social media management</li>
+      <li>AI assistant setup</li>
+      <li>Contracts &amp; agreements</li>
+    </ul>
+  </div>
+</section>
+
+<section class="section alt" id="start" style="padding-top:56px">
+  <div class="container" style="max-width:880px">
+    <div class="steps-bar" aria-hidden="true"><span id="s1" class="on">1 · About your business</span><span id="s2">2 · Pick a time</span></div>
+
+    <div class="panel" id="step1">
+      <h2 style="font-size:1.6rem">Tell us about your business</h2>
+      <p>Takes about a minute. Your answers go straight to Desirae so your consultation starts with a plan.</p>
+      <form class="intake" id="grow-form" novalidate>
+        <label>Your name<input name="name" autocomplete="name" required></label>
+        <label>Business name<input name="biz" autocomplete="organization"></label>
+        <label>Email<input name="email" type="email" autocomplete="email" required></label>
+        <label>Phone<input name="phone" type="tel" autocomplete="tel" placeholder="(555) 555-0123"></label>
+        <label>Industry<input name="industry" placeholder="e.g. HVAC, hair studio, food truck"></label>
+        <label>Where are you now?
+          <select name="stage">
+            <option>Just an idea</option>
+            <option>Starting up (under 1 year)</option>
+            <option selected>Up and running (1–3 years)</option>
+            <option>Established (3+ years)</option>
+          </select>
+        </label>
+        <div class="full">
+          <label style="margin-bottom:2px">What do you want help with?</label>
+          <div class="needs">
+            <label><input type="checkbox" name="need" value="Filings & licenses">Filings &amp; licenses</label>
+            <label><input type="checkbox" name="need" value="Website & booking">Website &amp; booking</label>
+            <label><input type="checkbox" name="need" value="Payments & invoicing">Payments &amp; invoicing</label>
+            <label><input type="checkbox" name="need" value="Social media">Social media</label>
+            <label><input type="checkbox" name="need" value="AI assistant setup">AI assistant setup</label>
+            <label><input type="checkbox" name="need" value="Contracts">Contracts</label>
+          </div>
+        </div>
+        <label class="full">Anything else we should know?<textarea name="notes" placeholder="Your goals, deadlines, or what's slowing you down"></textarea></label>
+        <div class="full err" id="grow-err" role="alert"></div>
+        <div class="full"><button class="btn btn-primary" type="submit">Continue to scheduling →</button></div>
+      </form>
+    </div>
+
+    <div class="panel" id="step2" hidden>
+      <h2 style="font-size:1.6rem">Pick your consultation</h2>
+      <p class="recap" id="recap"></p>
+      <div class="slot-pick" role="group" aria-label="Consultation length">
+        <button type="button" class="slot active" data-slot="15min" aria-pressed="true"><b>15-minute intro call</b><small>Quick fit check and next steps</small></button>
+        <button type="button" class="slot" data-slot="30min" aria-pressed="false"><b>30-minute strategy session</b><small>Walk through your business and leave with a plan</small></button>
+      </div>
+      <iframe id="grow-cal" class="cal-frame" title="Schedule a small business consultation with Sentinel Paradise" allow="camera; microphone; autoplay; fullscreen"></iframe>
+      <div class="cal-status" style="margin-top:14px">
+        <button type="button" class="btn btn-ghost" id="grow-back" style="padding:9px 18px">← Edit my answers</button>
+        <a id="grow-ext" href="#" target="_blank" rel="noopener">Open calendar in a new tab →</a>
+      </div>
+      <p class="fineprint">Your answers are attached to your booking. Prefer to talk? Call <a href="tel:+15622259516">(562) 225-9516</a>.</p>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="copy">
+      <span>© <span data-year>2026</span> Sentinel Paradise Inc. All rights reserved.</span>
+      <span><a href="grow">Grow</a> · <a href="./">Home</a> · <a href="capabilities">Capabilities</a> · <a href="academy">Sentinel Academy</a></span>
+    </div>
+  </div>
+</footer>
+<script src="script.js"></script>
+<script>
+(function () {
+  var base = 'https://cal.com/desirae-moore-n1dby6/';
+  var form = document.getElementById('grow-form');
+  var step1 = document.getElementById('step1'), step2 = document.getElementById('step2');
+  var frame = document.getElementById('grow-cal'), ext = document.getElementById('grow-ext');
+  var slug = '15min', info = null;
+
+  function calUrl(embed) {
+    var p = new URLSearchParams();
+    if (embed) p.set('embed', 'true');
+    p.set('name', info.name); p.set('email', info.email); p.set('notes', info.notes);
+    return base + slug + '?' + p.toString();
+  }
+  function load() { frame.src = calUrl(true); ext.href = calUrl(false); }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = form.elements, err = document.getElementById('grow-err');
+    var name = f.name.value.trim(), email = f.email.value.trim();
+    if (!name) { err.textContent = 'Please add your name.'; f.name.focus(); return; }
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email.'; f.email.focus(); return; }
+    err.textContent = '';
+    var needs = Array.prototype.filter.call(form.querySelectorAll('input[name=need]'), function (c) { return c.checked; }).map(function (c) { return c.value; });
+    var lines = ['GROW intake (small business)',
+      'Business: ' + (f.biz.value.trim() || '—'),
+      'Industry: ' + (f.industry.value.trim() || '—'),
+      'Stage: ' + f.stage.value,
+      'Phone: ' + (f.phone.value.trim() || '—'),
+      'Needs: ' + (needs.join(', ') || '—')];
+    if (f.notes.value.trim()) lines.push('Notes: ' + f.notes.value.trim());
+    info = { name: name, email: email, notes: lines.join('\n') };
+    document.getElementById('recap').textContent = 'Booking for ' + name + (f.biz.value.trim() ? ' · ' + f.biz.value.trim() : '') + '. Your answers are filled in for you.';
+    step1.hidden = true; step2.hidden = false;
+    document.getElementById('s1').classList.remove('on'); document.getElementById('s2').classList.add('on');
+    load();
+    document.getElementById('start').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  document.querySelectorAll('[data-slot]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-slot]').forEach(function (x) { x.classList.remove('active'); x.setAttribute('aria-pressed', 'false'); });
+      b.classList.add('active'); b.setAttribute('aria-pressed', 'true');
+      slug = b.getAttribute('data-slot'); load();
+    });
+  });
+
+  document.getElementById('grow-back').addEventListener('click', function () {
+    step2.hidden = true; step1.hidden = false;
+    document.getElementById('s2').classList.remove('on'); document.getElementById('s1').classList.add('on');
+  });
+})();
+</script>
+</body>
+</html>
