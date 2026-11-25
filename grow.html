@@ -111,6 +111,7 @@
             <label><input type="checkbox" name="need" value="Contracts">Contracts</label>
           </div>
         </div>
+        <label>Promo code<input name="promo" autocomplete="off" placeholder="Optional"></label>
         <label class="full">Anything else we should know?<textarea name="notes" placeholder="Your goals, deadlines, or what's slowing you down"></textarea></label>
         <div class="full err" id="grow-err" role="alert"></div>
         <div class="full"><button class="btn btn-primary" type="submit">Continue to scheduling →</button></div>
@@ -166,6 +167,8 @@
     var name = f.name.value.trim(), email = f.email.value.trim();
     if (!name) { err.textContent = 'Please add your name.'; f.name.focus(); return; }
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) { err.textContent = 'Please enter a valid email.'; f.email.focus(); return; }
+    var promo = f.promo.value.toUpperCase().replace(/[^A-Z]/g, "");
+    if (promo && promo !== "HECULA") { err.textContent = "That promo code isn't valid."; f.promo.focus(); return; }
     err.textContent = '';
     var needs = Array.prototype.filter.call(form.querySelectorAll('input[name=need]'), function (c) { return c.checked; }).map(function (c) { return c.value; });
     var lines = ['GROW intake (small business)',
@@ -175,8 +178,9 @@
       'Phone: ' + (f.phone.value.trim() || '—'),
       'Needs: ' + (needs.join(', ') || '—')];
     if (f.notes.value.trim()) lines.push('Notes: ' + f.notes.value.trim());
+    if (promo) lines.push("Promo code: HECULA (special pricing)");
     info = { name: name, email: email, notes: lines.join('\n') };
-    document.getElementById('recap').textContent = 'Booking for ' + name + (f.biz.value.trim() ? ' · ' + f.biz.value.trim() : '') + '. Your answers are filled in for you.';
+    document.getElementById('recap').textContent = 'Booking for ' + name + (f.biz.value.trim() ? ' · ' + f.biz.value.trim() : '') + '. Your answers are filled in for you.' + (promo ? ' Promo code HECULA applied: special pricing.' : '');
     step1.hidden = true; step2.hidden = false;
     document.getElementById('s1').classList.remove('on'); document.getElementById('s2').classList.add('on');
     load();
