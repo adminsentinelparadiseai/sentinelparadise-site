@@ -149,3 +149,7 @@ form.ask{display:grid;gap:14px}
 .nav-links a.btn{color:#04121f}
 .nav-links a.btn:hover{color:#04121f}
 @media (max-width:720px){.hero-art img[src*="mascot"]{max-width:220px}}
+
+/* Nav: keep items on one line with the AI Chief of Staff link (2026-11-27) */
+.nav-links a{white-space:nowrap}
+@media (max-width:1180px){.nav-links{gap:18px}.brand{font-size:1.05rem}}
